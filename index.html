@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="es">
 
 <head>
@@ -8,7 +8,7 @@
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            background-color: #f7f7f7;
+            background-color: #f4f4f4;
             color: #333;
             margin: 0;
             padding: 0;
@@ -16,18 +16,57 @@
             align-items: center;
             justify-content: center;
             height: 100vh;
+            overflow: hidden;
+        }
+
+        .dot-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .explosion {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            animation: explode linear 1s forwards;
+            transform-origin: center;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(50);
+                opacity: 0;
+            }
         }
 
         .container {
             text-align: center;
-            padding: 20px;
+            padding: 40px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             background-color: #fff;
+            max-width: 600px;
+            margin: auto;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            z-index: 2;
         }
 
         h1 {
-            color: #4285f4;
+            color: #1a1a1a;
+            font-size: 2em;
+            margin-bottom: 20px;
         }
 
         p {
@@ -36,9 +75,9 @@
         }
 
         button {
-            padding: 10px 20px;
+            padding: 15px 30px;
             font-size: 16px;
-            background-color: #34a853;
+            background-color: #007bff;
             color: #fff;
             border: none;
             border-radius: 5px;
@@ -47,7 +86,7 @@
         }
 
         button:hover {
-            background-color: #2b8a3e;
+            background-color: #0056b3;
         }
 
         img {
@@ -60,12 +99,33 @@
 </head>
 
 <body>
+    <div class="dot-container"></div>
     <div class="container">
-        <h1>¡Bienvenido a mi perfil de Git!</h1>
-        <p>Soy Rosendo Santos Severiano, actualmente cursando la ingeniería. Si estás aquí es porque te interesa algo de mi trabajo. Aquí podrás encontrar todo lo que he realizado como desarrollador. ¡Adelante! ¡Muchas gracias por tu tiempo!</p>
+        <h1>Bienvenido a mi perfil de Git</h1>
+        <p>Soy Rosendo Santos Severiano, actualmente cursando la ingeniería. Si estás aquí es porque te interesa algo de mi trabajo. Aquí podrás encontrar todo lo que he realizado como desarrollador. ¡Adelante! Muchas gracias por tu tiempo.</p>
         <button>Ir</button> <br>
         <img src="https://media.giphy.com/avatars/achmadefch/O1qZAnse3FmE.gif" alt="Calavera">
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const dotContainer = document.querySelector('.dot-container');
+            const colors = ['#007bff', '#ff7f50', '#32cd32', '#ff1493', '#8a2be2', '#ffd700'];
+
+            setInterval(function () {
+                const explosion = document.createElement('div');
+                explosion.className = 'explosion';
+                explosion.style.left = Math.random() * window.innerWidth + 'px';
+                explosion.style.top = Math.random() * window.innerHeight + 'px';
+                explosion.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                dotContainer.appendChild(explosion);
+
+                explosion.addEventListener('animationend', function () {
+                    explosion.remove();
+                });
+            }, 500);
+        });
+    </script>
 </body>
 
 </html>
