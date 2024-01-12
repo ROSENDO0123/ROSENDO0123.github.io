@@ -1,56 +1,71 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rosendo Santos Severiano - Desarrollador</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <title>Perfil de Git de Rosendo Santos Severiano</title>
     <style>
         body {
-            background-color: #f0f0f0;
-            color: #333;
             font-family: 'Arial', sans-serif;
-            text-align: center;
+            background-color: #f7f7f7;
+            color: #333;
             margin: 0;
             padding: 0;
-            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
         }
 
         h1 {
-            margin-top: 100px;
-            font-size: 36px;
-            animation: animate__animated animate__fadeIn animate__delay-1s flameAnimation 2s infinite alternate;
+            color: #4285f4;
         }
 
-        .skull {
+        p {
+            margin: 20px 0;
+            line-height: 1.6;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #34a853;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2b8a3e;
+        }
+
+        img {
             width: 100px;
             height: 100px;
-            margin-top: 50px;
-            animation: animate__animated animate__rotateIn rotateSkull 3s infinite linear;
-        }
-
-        @keyframes flameAnimation {
-            from {
-                color: #555;
-            }
-            to {
-                color: #777;
-            }
-        }
-
-        @keyframes rotateSkull {
-            from {
-                transform: rotate(0deg);
-            }
-            to {
-                transform: rotate(360deg);
-            }
+            border-radius: 50%;
+            margin-top: 20px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Bienvenido a la página de Rosendo Santos Severiano</h1>
-    <p>Aquí podrás encontrar un poco sobre mi experiencia como desarrollador</p>
-    <img class="skull" src="https://media.giphy.com/avatars/achmadefch/O1qZAnse3FmE.gif" alt="Calavera">
+    <div class="container">
+        <h1>¡Bienvenido a mi perfil de Git!</h1>
+        <p>Soy Rosendo Santos Severiano, actualmente cursando la ingeniería. Si estás aquí es porque te interesa algo de mi trabajo. Aquí podrás encontrar todo lo que he realizado como desarrollador. ¡Adelante! ¡Muchas gracias por tu tiempo!</p>
+        <button>Ir</button>
+        <img src="https://media.giphy.com/avatars/achmadefch/O1qZAnse3FmE.gif" alt="Calavera">
+    </div>
 </body>
+
 </html>
