@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rosendo Santos Severiano - Desarrollador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
         body {
             background-color: black;
@@ -18,14 +19,14 @@
         h1 {
             margin-top: 100px;
             font-size: 36px;
-            animation: flameAnimation 2s infinite alternate;
+            animation: animate__animated animate__fadeIn animate__delay-1s flameAnimation 2s infinite alternate;
         }
 
         .skull {
             width: 100px;
             height: 100px;
             margin-top: 50px;
-            animation: rotateSkull 3s infinite linear;
+            animation: animate__animated animate__rotateIn rotateSkull 3s infinite linear;
         }
 
         @keyframes flameAnimation {
