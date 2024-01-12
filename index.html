@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rosendo Santos Severiano - Desarrollador</title>
+    <style>
+        body {
+            background-color: black;
+            color: red;
+            font-family: 'FlameFont', sans-serif; /* Puedes reemplazar 'FlameFont' con una fuente que prefieras */
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            margin-top: 100px;
+            font-size: 36px;
+            animation: flameAnimation 2s infinite alternate;
+        }
+
+        .skull {
+            width: 100px;
+            height: 100px;
+            margin-top: 50px;
+            animation: rotateSkull 3s infinite linear;
+        }
+
+        @keyframes flameAnimation {
+            from {
+                color: red;
+            }
+            to {
+                color: orange;
+            }
+        }
+
+        @keyframes rotateSkull {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Bienvenido a la página de Rosendo Santos Severiano</h1>
+    <p>Aquí podrás encontrar un poco sobre mi experiencia como desarrollador</p>
+    <img class="skull" src="https://media.giphy.com/avatars/achmadefch/O1qZAnse3FmE.gif" alt="Calavera">
+</body>
+</html>
