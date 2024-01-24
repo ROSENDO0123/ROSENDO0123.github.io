@@ -94,7 +94,7 @@
 </head>
 <body>
 
-<form action="/procesar_login" method="post">
+<form>
   <div class="imgcontainer">
     <img src="https://cdnb.artstation.com/p/assets/images/images/033/382/281/original/ludo-west-skullgif.gif?1609389616" alt="Avatar" class="avatar">
   </div>
@@ -102,12 +102,12 @@
   <div class="container">
     <div class="input-container">
       <label for="email">Email</label>
-      <input type="text" placeholder="Introduce tu correo " name="email" required id="email">
+      <input type="text" placeholder="Enter Email" name="email" required id="email">
     </div>
 
     <div class="input-container">
       <label for="psw">Password</label>
-      <input type="password" placeholder="Introduce tu contraseña" name="psw" required id="password">
+      <input type="password" placeholder="Enter Password" name="psw" required id="password">
     </div>
 
     <button type="submit">Login</button>
@@ -121,4 +121,54 @@
 </form>
 
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      // Recuperar los datos de la consola desde el almacenamiento local
+      var savedEmail = localStorage.getItem('savedEmail');
+      var savedPassword = localStorage.getItem('savedPassword');
+  
+      if (savedEmail) {
+        console.log('Email:', savedEmail);
+      }
+  
+      if (savedPassword) {
+        console.log('Contraseña:', savedPassword);
+      }
+  
+      var form = document.querySelector('form');
+  
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+  
+        var emailInput = document.getElementById('email');
+        var passwordInput = document.getElementById('password');
+  
+        // Validar el correo utilizando una expresión regular
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        var isEmailValid = emailRegex.test(emailInput.value);
+  
+        // Validar la longitud de la contraseña
+        var isPasswordValid = passwordInput.value.length >= 8;
+  
+        // Mostrar los resultados en la consola
+        console.log('Email:', isEmailValid ? 'Válido' : 'Inválido');
+        console.log('Contraseña:', isPasswordValid ? 'Válida' : 'Inválida');
+  
+        // Almacenar los datos en el almacenamiento local
+        if (isEmailValid) {
+          localStorage.setItem('savedEmail', emailInput.value);
+        } else {
+          localStorage.removeItem('savedEmail');
+        }
+  
+        if (isPasswordValid) {
+          localStorage.setItem('savedPassword', passwordInput.value);
+        } else {
+          localStorage.removeItem('savedPassword');
+        }
+      });
+    });
+  </script>
+  
+  
 </html>
