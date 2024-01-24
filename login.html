@@ -1,21 +1,124 @@
-<form action="" method="post">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    form {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      width: 300px;
+    }
+
+    .imgcontainer {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    img.avatar {
+      width: 50%;
+      border-radius: 50%;
+    }
+
+    .container {
+      padding: 16px;
+    }
+
+    .input-container {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .cancelbtn {
+      background-color: #ccc;
+      color: black;
+    }
+
+    .psw {
+      text-align: center;
+      margin-top: 20px;
+      color: #333;
+    }
+
+    .psw a {
+      color: #3498db;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .psw a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+<form action="/procesar_login" method="post">
   <div class="imgcontainer">
     <img src="https://cdnb.artstation.com/p/assets/images/images/033/382/281/original/ludo-west-skullgif.gif?1609389616" alt="Avatar" class="avatar">
   </div>
-  <div class="container">
-    <label for="email"><b>Email</b></label>
-    <input type="text" placeholder="Enter Email" name="email" required id="email">
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required id="password">
+  <div class="container">
+    <div class="input-container">
+      <label for="email">Email</label>
+      <input type="text" placeholder="Enter Email" name="email" required id="email">
+    </div>
+
+    <div class="input-container">
+      <label for="psw">Password</label>
+      <input type="password" placeholder="Enter Password" name="psw" required id="password">
+    </div>
 
     <button type="submit">Login</button>
-    <label>
-      <input type="checkbox" checked="checked" name="remember"> Remember me
-    </label>
+   
   </div>
-  <div class="container" style="background-color:#f1f1f1">
-    <button type="button" class="cancelbtn">Cancel</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+
+  <div class="container">
+     
+    <p class="psw">Forgot <a href="#">password?</a></p>
   </div>
 </form>
+
+</body>
+</html>
